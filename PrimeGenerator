@@ -1,0 +1,24 @@
+from __future__ import print_function
+cnt=0
+nl=[]
+ml=[]
+print('Enter the number of tasks')
+t=int(input())
+if t<=10:
+    for k in range (0,t):
+        print('Enter the lower and upper limit')
+        m=int(input())
+        n=int(input())
+        ml.append(m)
+        nl.append(n)
+    for k in range (0,t):
+        if nl[k]>=1 and nl[k]<=1000000000 and ml[k]>=1 and ml[k]<=1000000000 and (nl[k]-ml[k]<=100000) :
+           for i in range (ml[k],nl[k]+1):
+               cnt=0
+               for j in range (2,(i//2)+1):
+                   if i%j==0:
+                     cnt=1
+                     break
+               if cnt==0 and i!=1:
+                     print(i ,end=" ")
+           print()
